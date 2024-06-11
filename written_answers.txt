@@ -1,0 +1,84 @@
+Topics to Cover
+1. Introduction to Number Systems
+• Overview of different number systems (Decimal, Binary, Octal, Hexadecimal)
+• Importance of number systems in computing
+
+-- Overview of different number systems (Decimal, Binary, Octal, Hexadecimal):
+    A number system is a method of representing values on a numberline by using symbols, and rules.
+    These symbols are 0,1,2,3,4,5,6,7,8,9 and are called digits
+    The four common number types are:
+        Binary :        Base 2      -> 0, 1
+        Octal :         Base 8      -> 0, 1, 2, 3, 4, 5, 6, 7
+        Decimal:        Base 10     -> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        Hexadecimal :   Base 16     -> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+
+-- Importance of number systems in computing:
+    -Representing data: binary is used to represent transistor states
+                        where as hexadecimal is used to represent those same binary numbers, but on a bigger scale
+                        decimal is used for when we need to discern numbers visually and work with them
+    -memory optimziation:   
+                some number systems simply require less data to representsome values as compared to other number systems
+                so theres an aspect of optmizaing your memory allocation if you used different number systems for different data
+
+
+2. Binary:         <Bi for two>
+    Used to explain tasks to a computer, since theres only two states 0 and 1
+    These two states represente the two states of a transistor, 0 = no current // 1 = current passsed through
+    Each digit in a binary number is called a single Bit
+    -A representation of decimal to binary:
+        Decimal -> Binary
+        0 -> 0, 1 -> 1
+        2 -> 10, 3 -> 11
+        4 -> 100, 5 -> 101, 6 -> 110, 7 -> 111
+        8 -> 1000, 9 -> 1001, 10 -> 1010, 11 - > 1010, 12 -> 1100, 13 -> 1101, 14 -> 1110, 15 -> 1111
+        16 -> 10000 etc
+
+    -Binary vs Decimal:
+        Base:
+            B: base-2
+            D: base-10
+        representation:
+            B: 2^0 2^1 2^2 2^3
+            D: 10^0 10^1 10^2 10^3
+        usage:
+            B: digital and electronic devices use it as a fundemental number system, because of digital logic circuits
+            D: best used for human familiarity, used for human calcuations, and data representation, when humans need readibility and precision
+        size:
+            B: less space efficient, needs more digits to represent same data as decimal
+            D: more space-efficient, needs less digits to represent same data as binary
+
+3. Bit?:
+    -A bit is: 
+            a single binary digit, which is either a 0 or 1
+            0 is a bit// 01 is two bits
+            bits is the fundemental building block of ALL digital information
+
+    -A byte is:
+            00000000 is 8 bits, which is called a byte, if theyre all full
+            11111111 its the max value of a byte which is 255 in decimal
+
+    -Binary place values:
+            In the binary number system, each digit's place value corresponds to a power of 2. The rightmost digit represents the least significant bit (LSB)
+            while the leftmost digit represents the most significant bit (MSB). Here's how binary place values work:
+
+            MSB (Most Significant Bit):
+                                    This is the leftmost digit in a binary number and holds the highest place value. Its value is determined by its position in the number.
+
+            Place Values:
+                        Moving from right to left, each successive digit's place value doubles.
+                        It starts with 1 for the rightmost bit (also called the 1's place), then 2 for the next bit (2's place), 4 for the next (4's place), and so on.
+
+                ... 128  64  32  16   8   4   2   1   (Place values)
+                ...   0   0   0   0   1   1   0   1   (Example binary number)
+                ______________________________________
+                                      8 + 4     + 1
+                     15 Decimal == 1101 Binary
+
+4. Converting Between Number Systems:
+    - Will be in python file named conversions
+
+
+
+https://www.geeksforgeeks.org/
+https://www.youtube.com/watch?v=JS40jPaogM4
+https://www.youtube.com/watch?v=VLflTjd3lWA&list=PL0o_zxa4K1BXCpQbUdf0htZE8SS0PYjy-
