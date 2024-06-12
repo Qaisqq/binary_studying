@@ -70,12 +70,18 @@ Topics to Cover
                         Moving from right to left, each successive digit's place value doubles.
                         It starts with 1 for the rightmost bit (also called the 1's place), then 2 for the next bit (2's place), 4 for the next (4's place), and so on.
 
-                ... 128  64  32  16   8   4   2   1   (Place values)
+                ... 128  64  32  16   8   4   2   1   (Place values).2
                 ...   0   0   0   0   1   1   0   1   (Example binary number)
                 ______________________________________
                                       8 + 4     + 1
                      15 Decimal == 1101 Binary
 
+
+                ... 4096   512   64   8   1   (Place values).8
+                ...   0     1     1   0   1   (Example binary number)
+                ______________________________________
+                           1000   100    001
+                     1101 Binary == 1000100001 Octal
 4. Converting Between Number Systems:
     - all conversions will be in python file named conversions
 
@@ -88,6 +94,6 @@ resources:
 
  2414 
  
-decimal 2 1
+ decimal 2 1
  ocat   4 2 1
  hexa   8 4 2 1

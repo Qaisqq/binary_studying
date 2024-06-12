@@ -37,15 +37,18 @@ def octal_to_binary(octal):
         binary_str += binary_digit
     return binary_str
 
-# def binary_to_octal(binary):
-#     binary_list = [int(bit) for bit in str(binary)]
-#     binary_list.reverse()
-#     decimal = 0
-#     place_value = 1
-#     for bit in range(len(binary_list)):
-#         place_value = place_value * 2
-#         if binary_list[bit] == 1:
-#             decimal = place_value + decimal
-#             return decimal
+def binary_to_octal(binary):
+    while len(binary) % 3 != 0:
+        binary = '0' + binary
+    octal = ''
+    i = 0
+    while i < len(binary):
+        group = binary[i:i+3]
+        octal_digit = 0
+        for bit in group:
+            octal_digit = octal_digit * 2 + int(bit)
+        octal += str(octal_digit)  
+        i += 3
+    return octal
 
-# print(binary_to_octal(1101))
+print(binary_to_octal('1101101'))
