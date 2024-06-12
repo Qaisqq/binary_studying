@@ -62,8 +62,10 @@ Topics to Cover
             while the leftmost digit represents the most significant bit (MSB). Here's how binary place values work:
 
             MSB (Most Significant Bit):
-                                    This is the leftmost digit in a binary number and holds the highest place value. Its value is determined by its position in the number.
+                                    This is the leftmost digit in a binary number and holds the highest place value.
 
+            LSB (Least Significant Bit):
+                                    This is the rightmost digin in a binary number and holds the smallests place value.
             Place Values:
                         Moving from right to left, each successive digit's place value doubles.
                         It starts with 1 for the rightmost bit (also called the 1's place), then 2 for the next bit (2's place), 4 for the next (4's place), and so on.
@@ -75,10 +77,17 @@ Topics to Cover
                      15 Decimal == 1101 Binary
 
 4. Converting Between Number Systems:
-    - Will be in python file named conversions
+    - all conversions will be in python file named conversions
 
 
+resources:
+ https://www.geeksforgeeks.org/
+ https://www.youtube.com/watch?v=JS40jPaogM4
+ https://www.youtube.com/watch?v=VLflTjd3lWA&list=PL0o_zxa4K1BXCpQbUdf0htZE8SS0PYjy-
 
-https://www.geeksforgeeks.org/
-https://www.youtube.com/watch?v=JS40jPaogM4
-https://www.youtube.com/watch?v=VLflTjd3lWA&list=PL0o_zxa4K1BXCpQbUdf0htZE8SS0PYjy-
+
+ 2414 
+ 
+decimal 2 1
+ ocat   4 2 1
+ hexa   8 4 2 1
