@@ -91,8 +91,14 @@ def binary_to_bcd(binary):
         bcd = bcd + ' ' + n_bit
     return bcd
 
-print(binary_to_bcd('10101001'))
+def bcd_to_binary(bcd):
+    binary_list = bcd.split()
+    n_decimal = ''
+    for bit in binary_list:
+        n = binary_to_decimal(bit)
+        n_decimal = str(n_decimal) + str(n)
+    print(n_decimal)
 
 
 
-
+bcd_to_binary('0001 0101 1001')
