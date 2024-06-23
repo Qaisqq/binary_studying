@@ -83,14 +83,127 @@ Topics to Cover
                            1000   100    001
                      1101 Binary == 1000100001 Octal
 4. Converting Between Number Systems:
-    - all conversions will be in python file named conversions
+    - All conversions will be in python file named conversions
 
+5. Binary Arithemtics:
+    - Addition of binary numbers:
+        TLDR: cary over 1+1 and thats it for addition
+    - Substraction of binary numbers: 
+        TLDR: borrow when needed and turn borrowed number into 0, and the previous one into 2
+    - multiplication of binary numbers:
+        TLDR: standard multiplication table, then unique addition
+    - divison of binary numbers:
+        TLDR: standard divison table, then unique substraction
+
+6. Signed Binary Numbers:
+    - Understanding positive and negative binary numbers:
+        In real life numbers arent signed, all numbers are taken as positive unless theyre signed with a -
+        the same goes for how we've been using binary
+
+        Method 1 : Sign And Magnitude
+
+        We want to sign binary numbers now, but its diffcult since a bit is only a logic indiccation of 0 and 1
+        to work around this, we use a new method using the MSB (most significant bit) as the indicator fo whether a binary 
+        number is positive or negative:  if the MSB is 0 -> positive
+                                         if the MSB is 1 -> negative
+        example:
+                [0][0101101]
+                 +    45      =  45
+                [1][0101101]
+                 -    45      = -45
+    - Ones' Complement representation:
+        Method 2: 
+            Here the positive numbers are the same as Sign and Magnitude, and are called non-complemented values
+            The negative values are "inverted" or "negated", the inversion of 0 is 1, and 1 is 0
+            using inverters, this is an example
+            0 1 1 0 1 1 0 1 
+            I N V E R T E R
+            _______________
+            1 0 0 1 0 0 1 0    <- Ones' Complement
+
+            This method helps in addition and substraction example:
+                108 - 45 :
+                108 in bi = 01101100    < we add a trailing 0 to indicate positive
+                45 in bi =  00101101     < we add a trailing 0 to indicate positive, and another one to match 108
+
+                we invert 45 / 00101101 to -45 / 11010010 
+                we substract the numbers now
+                            01101100
+                            01010010
+                            ________
+overflow indicating +/- ->[1]00111110
+    - Two's Complement:
+     The two’s complement is another method to represent the negative binary number in a signed binary number system.
+     Just like Sign-and-Magnitude and One’s Complement methods, the positive binary numbers remain unchanged. 
+     Whereas, a negative number in two’s complement method is one’s complemented plus (+) “1” to the least significant bit (LSB). 
+     The negative binary number when added to its counterpart positive number results in zero. The two’s complement does not include
+     the double zeros issue which was observed in Sign-and-Magnitude and One’s Complement methods. Further,
+     it is much easier to obtain two’s complement making arithmetic operations relatively much easier.
+
+     Using the previous example of one’s complement, the two’s complement of (45 = 00101101) is obtained by
+     first getting one’s complement and adding “1” to it i.e. (11010010 + 00000001 = 11010011).
+     The two’s complement of 45 equals -45 in a signed binary number
+     example:
+        01101100   108
+      + 11010011   -45
+      __________
+       100111111    < WE DISCARD THE OVERFLOW
+        111111 = 32 + 16 + 8 + 4 + 2 + 1 = 63
+
+    - Arhithmetic operations with signed binary numbers:
+        This was detailed in the three previous segments.
+
+        TABLE OF 4 BIT SIGNED BINARY NUMBERS OF THE THREE METHODS:
+            Decimal   Signed Mag    Signed Ones    Signed two’s
+            +7        0111          0111           0111
+            +6        0110          0110           0110
+            +5        0101          0101           0101
+            +4        0100          0100           0100
+            +3        0011          0011           0011
+            +2        0010          0010           0010
+            +1        0001          0001           0001
+            +0        0000          0000           0000
+            -0        1000          1111            --
+            -1        1001          1110           1111
+            -2        1010          1101           1110
+            -3        1011          1100           1101
+            -4        1100          1011           1100
+            -5        1101          1010           1011
+            -6        1110          1001           1010
+            -7        1111          1000           1001
+
+7. Binary Coded Decimal (BCD):
+    - Definition and uses of BCD:
+        The Binary Coded Decimal is a 4-bit binary number coded to represent specifically a decimal number.
+        The “coded” refers to the process of assigning a specific or unique binary code to a particular decimal number.
+        Example: 
+         Represent 356 in decimal in, binary and bcd:
+            356 DECIMAL 
+            1 2 4 8 16 32 64 128 256
+            0 0 0 1  1  0  1  0   1  
+            000110101 BINARY
+             3    5    6
+            0011 0101 0110 BCD
+
+             [[ 356 Decimal // 000110101 Binary // 0011 0101 0110 BCD  ]]
+    
+    - Convert Binary to Bcd
+        Arthimetically it is done by first converting it to decimal, then writing each numbers binary representation 
+        in a row
+
+        Python code will be a function in the file conversions.py 
 
 resources:
- https://www.geeksforgeeks.org/
- https://www.youtube.com/watch?v=JS40jPaogM4
- https://www.youtube.com/watch?v=VLflTjd3lWA&list=PL0o_zxa4K1BXCpQbUdf0htZE8SS0PYjy-
-
+ https://www.youtube.com/watch?v=JS40jPaogM4 <- number systems
+ https://www.youtube.com/watch?v=VLflTjd3lWA&list=PL0o_zxa4K1BXCpQbUdf0htZE8SS0PYjy- <- converting binary numbers
+ https://www.youtube.com/watch?v=C5EkxfNEMjE <- binary addition and substraction 
+ https://www.youtube.com/watch?v=xHWKYFhhtJQ <- binary multiplication 
+ https://www.youtube.com/watch?v=VKemv9u40gc <- binary divison 
+ https://www.electronics-lab.com/article/signed-binary-numbers/ <- signed binary numbers
+ https://www.youtube.com/watch?v=AM0tr8Kyvzg <- decimal to BCD coversion
+ https://www.youtube.com/watch?v=enXh5tSmMg4 <- Binary to BCD conversion (IN MINECRAFT)
+ https://www.youtube.com/watch?v=eXIfZ1yKFlA < Binary to bcd (double dabble)
+ https://gist.github.com/baryluk/082771648b8b24a2c04fccff0c45ba22 < python double dabble
 
  2414 
  

@@ -1,13 +1,12 @@
 def binary_to_decimal(binary):
-    binary_list = [int(bit) for bit in str(binary)]
-    binary_list.reverse()
+    binary_str = str(binary)
     decimal = 0
     place_value = 1
-    for bit in range(len(binary_list)):
-        place_value = place_value * 2
-        if binary_list[bit] == 1:
-            decimal = place_value + decimal
-            return decimal
+    for bit in range(len(binary_str) - 1, -1, -1):
+        if binary_str[bit] == '1':
+            decimal += place_value
+        place_value *= 2
+    return decimal
 
 def binary_to_octal(binary):
     while len(binary) % 3 != 0:
@@ -41,11 +40,12 @@ def binary_to_hexadecimal(binary):
     return hexadecimal
 
 def decimal_to_binary(decimal):
-    if decimal == 0:
+    if decimal == '0':
         return '0' 
-    elif decimal < 0:
+    elif decimal < '0':
         return 'Invalid input'  
-    binary_str = ''  
+    binary_str = '' 
+    decimal = int(decimal) 
     while decimal > 0:
         binary_str = str(decimal % 2) + binary_str 
         decimal //= 2 
@@ -80,4 +80,19 @@ def hexadecimal_to_binary(hexadecimal):
         binary += hexadecimal_to_binary_map[digit]
     return binary
 
-print(binary_to_octal('1101101'))
+def binary_to_bcd(binary):
+    decimal = binary_to_decimal(binary)
+    decimal = str(decimal)
+    bcd = ''
+    for bit in decimal:
+        n_bit = decimal_to_binary(bit)
+        while len(n_bit) < 4:
+            n_bit = '0' + n_bit
+        bcd = bcd + ' ' + n_bit
+    return bcd
+
+print(binary_to_bcd('10101001'))
+
+
+
+
