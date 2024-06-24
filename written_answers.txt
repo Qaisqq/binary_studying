@@ -193,6 +193,84 @@ overflow indicating +/- ->[1]00111110
 
         Python code will be a function in the file conversions.py 
 
+8 Applications of Binary Systems:
+    - Binary in computer systems (Data representations, Memory addressing):
+        all data in any shape or form at the lowest level in a computer system is represented by binary digits,
+        integers, characters and all inbetweens
+    
+    - Binary in programming (bitwise operations):
+        In computer programming, a bitwise operation operates on a bit string, a bit array or a binary
+        numeral (considered as a bit string) at the level of its individual bits.
+
+        It is a fast and simple action, basic to the higher-level arithmetic operations
+        and directly supported by the processor. Most bitwise operations are presented as two-operand 
+        instructions where the result replaces one of the input operands.
+
+        BIT WISE OPERATIONS:
+            - The bitwise NOT, or bitwise complement, is a unary operation that performs logical
+              negation on each bit, forming the ones' complement of the given binary value.
+              Bits that are 0 become 1, and those that are 1 become 0. For example:
+
+                NOT 0111  (decimal 7)
+                =   1000  (decimal 8)
+
+                NOT 10101011  (decimal 171)
+                =   01010100  (decimal 84)
+              The result of NOT is the two's complement - 1
+                     ( NOT X = -x - 1)
+
+            - The bitwise AND is a binary operation that takes two equal-length binary representations and performs
+              the logical AND operation on each pair of the corresponding bits.
+              Thus, if both bits in the compared position are 1, the bit in the resulting binary 
+              representation is 1 (1 × 1 = 1); otherwise, the result is 0 (1 × 0 = 0 and 0 × 0 = 0). 
+
+             AND can be used to find out whether a particulat bit in a bit pattern is set (1) or cleared (0)
+             for example:
+                Checking if second bit is set:
+                
+                    0011 (decimal 3)
+                AND 0010 (decimal 2)
+                =   0010 (decimal 2)
+                    value in non zero, so it is set
+             AND can be used to set and clear flags, as boolean states
+             in this example we 
+                    0110 (decimal 5)
+                AND 1011 (decimal 3)
+                =   0010 (decimal 1)
+
+            - The bitwise OR is a binary operation that takes two bit patterns of equal length and performs the 
+              logical inclusive OR operation on each pair of corresponding bits. 
+              The result in each position is 0 if both bits are 0, while otherwise the result is 1. For example:
+
+                   0101 (decimal 5)
+                OR 0011 (decimal 3)
+                =  0111 (decimal 7)
+
+                The bitwise OR may be used to set to 1 the selected bits of the register described above. 
+                For example, the fourth bit of 0010 (decimal 2) may be set by performing a bitwise OR with the 
+                pattern with only the fourth bit set:
+
+                   0010 (decimal 2)
+                OR 1000 (decimal 8)
+                =  1010 (decimal 10)
+
+            
+            - The bitwise XOR is a binary operation that takes two bit patterns of equal length and performs
+              the logical exclusive OR operation on each pair of corresponding bits. 
+              The result in each position is 1 if only one of the bits is 1, but will be 0 if both are 0 or both are 1. 
+              In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if they are the same. For example:
+
+                  0101 (decimal 5)
+             XOR  0011 (decimal 3)
+             =    0110 (decimal 6)
+
+             XOR may be used to invert selected bits in a register (called toggle/flip), you can toggle any bit by XORing it with 1 
+             0010 XOR 1010 = 1000
+             XOR is also used as a shortcut to clear the values of a registry back to zero, if you perform XOR on a value agaisnt it self the 
+             answer will always be zero
+
+
+
 resources:
  https://www.youtube.com/watch?v=JS40jPaogM4 <- number systems
  https://www.youtube.com/watch?v=VLflTjd3lWA&list=PL0o_zxa4K1BXCpQbUdf0htZE8SS0PYjy- <- converting binary numbers
@@ -204,9 +282,4 @@ resources:
  https://www.youtube.com/watch?v=enXh5tSmMg4 <- Binary to BCD conversion (IN MINECRAFT)
  https://www.youtube.com/watch?v=eXIfZ1yKFlA < Binary to bcd (double dabble)
  https://gist.github.com/baryluk/082771648b8b24a2c04fccff0c45ba22 < python double dabble
-
- 2414 
- 
- decimal 2 1
- ocat   4 2 1
- hexa   8 4 2 1
+https://en.wikipedia.org/wiki/Bitwise_operation < bitwise operations

@@ -99,6 +99,24 @@ def bcd_to_binary(bcd):
         n_decimal = str(n_decimal) + str(n)
     print(n_decimal)
 
+def bitwise_not(binary):
+    new_bin = ''
+    for bit in binary:
+        if bit == '0':
+            new_bin = '1' + new_bin
+        if bit == '1':
+            new_bin = '0' + new_bin
+    return new_bin
 
+def bitwise_and(bin1, bin2):
+    bin1 = str(bin1)
+    bin2 = str(bin2)
+    new_bin = ''
+    for bit1, bit2 in zip(bin1,bin2):
+        new_bin = new_bin + str((int(bit1)*int(bit2)))
+    return new_bin
 
-bcd_to_binary('0001 0101 1001')
+def bitwise_or(bin1, bin2):
+    bin1 = str(bin1)
+    bin2 = str(bin2)
+    new_bin = ''
