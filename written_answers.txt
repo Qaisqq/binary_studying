@@ -198,7 +198,7 @@ overflow indicating +/- ->[1]00111110
 
         Python code will be a function in the file conversions.py 
 
-8 Applications of Binary Systems:
+8. Applications of Binary Systems:
     - Binary in computer systems (Data representations, Memory addressing):
         all data in any shape or form at the lowest level in a computer system is represented by binary digits,
         integers, characters and all inbetweens
@@ -212,6 +212,7 @@ overflow indicating +/- ->[1]00111110
         instructions where the result replaces one of the input operands.
 
         BIT WISE OPERATIONS:
+
             - The bitwise NOT, or bitwise complement, is a unary operation that performs logical
               negation on each bit, forming the ones' complement of the given binary value.
               Bits that are 0 become 1, and those that are 1 become 0. For example:
@@ -237,11 +238,12 @@ overflow indicating +/- ->[1]00111110
                 AND 0010 (decimal 2)
                 =   0010 (decimal 2)
                     value in non zero, so it is set
-             AND can be used to set and clear flags, as boolean states
-             in this example we 
+
+             AND can be used to set and clear flags, as boolean states as well example:
                     0110 (decimal 5)
                 AND 1011 (decimal 3)
                 =   0010 (decimal 1)
+                    flag on the second bit was cleared 
 
             - The bitwise OR is a binary operation that takes two bit patterns of equal length and performs the 
               logical inclusive OR operation on each pair of corresponding bits. 
@@ -251,7 +253,7 @@ overflow indicating +/- ->[1]00111110
                 OR 0011 (decimal 3)
                 =  0111 (decimal 7)
 
-                The bitwise OR may be used to set to 1 the selected bits of the register described above. 
+                The bitwise OR may be also used to set to 1 the selected bits of the register described above. 
                 For example, the fourth bit of 0010 (decimal 2) may be set by performing a bitwise OR with the 
                 pattern with only the fourth bit set:
 
@@ -265,16 +267,40 @@ overflow indicating +/- ->[1]00111110
               The result in each position is 1 if only one of the bits is 1, but will be 0 if both are 0 or both are 1. 
               In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if they are the same. For example:
 
-                  0101 (decimal 5)
-             XOR  0011 (decimal 3)
-             =    0110 (decimal 6)
+                   0101 (decimal 5)
+               XOR 0011 (decimal 3)
+               =   0110 (decimal 6)
 
              XOR may be used to invert selected bits in a register (called toggle/flip), you can toggle any bit by XORing it with 1 
              0010 XOR 1010 = 1000
              XOR is also used as a shortcut to clear the values of a registry back to zero, if you perform XOR on a value agaisnt it self the 
              answer will always be zero
 
+            - LEFT AND RIGHT (arithmetic) shifts: >> and <<
+                In an arithmetic shift, the bits that are shifted out of either end are discarded. 
+                In a left arithmetic shift, zeros are shifted in on the right; in a right arithmetic shift, the sign bit (the MSB in two's complement) 
+                is shifted in on the left, thus preserving the sign of the operand.
 
+                This example uses an 8-bit register, interpreted as two's complement:
+
+                    00010111 (decimal +23) LEFT-SHIFT
+                 =  00101110 (decimal +46)
+
+                    10010111 (decimal −105) RIGHT-SHIFT
+                 =  11001011 (decimal −53)
+                In the first case, the leftmost digit was shifted past the end of the register, and a new 0 was shifted into the rightmost position. 
+                In the second case, the rightmost 1 was shifted out (perhaps into the carry flag), and a new 1 was copied into the leftmost position, 
+                preserving the sign of the number. Multiple shifts are sometimes shortened to a single shift by some number of digits. For example:
+
+                   00010111 (decimal +23) LEFT-SHIFT-BY-TWO
+                =  01011100 (decimal +92)
+                A left arithmetic shift by n is equivalent to multiplying by 2n (provided the value does not overflow), 
+                while a right arithmetic shift by n of a two's complement value is equivalent to taking the floor of division by 2n. 
+                If the binary number is treated as ones' complement, then the same right-shift operation results in division by 2n and rounding toward zero.
+
+               -In a logical shift, zeros are shifted in to replace the discarded bits. Therefore, the logical and arithmetic left-shifts are exactly the same.
+                However, as the logical right-shift inserts value 0 bits into the most significant bit, instead of copying the sign bit, it is ideal for unsigned binary numbers, 
+                while the arithmetic right-shift is ideal for signed two's complement binary numbers.
 
 resources:
  https://www.youtube.com/watch?v=JS40jPaogM4 <- number systems
@@ -287,4 +313,4 @@ resources:
  https://www.youtube.com/watch?v=enXh5tSmMg4 <- Binary to BCD conversion (IN MINECRAFT)
  https://www.youtube.com/watch?v=eXIfZ1yKFlA < Binary to bcd (double dabble)
  https://gist.github.com/baryluk/082771648b8b24a2c04fccff0c45ba22 < python double dabble
-https://en.wikipedia.org/wiki/Bitwise_operation < bitwise operations
+ https://en.wikipedia.org/wiki/Bitwise_operation < bitwise operations

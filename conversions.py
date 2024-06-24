@@ -99,7 +99,7 @@ def bcd_to_binary(bcd):
         n_decimal = str(n_decimal) + str(n)
     print(n_decimal)
 
-# def bitwise_not(binary):
+# def bitwise_not(binary):     ##WRONG IMPLMENTATION, I MISSUNDERSTOOD THE QUESTION
 #     new_bin = ''
 #     for bit in binary:
 #         if bit == '0':
