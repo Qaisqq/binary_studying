@@ -1,9 +1,5 @@
-Topics to Cover
 1. Introduction to Number Systems
-• Overview of different number systems (Decimal, Binary, Octal, Hexadecimal)
-• Importance of number systems in computing
-
--- Overview of different number systems (Decimal, Binary, Octal, Hexadecimal):
+ - Overview of different number systems (Decimal, Binary, Octal, Hexadecimal):
     A number system is a method of representing values on a numberline by using symbols, and rules.
     These symbols are 0,1,2,3,4,5,6,7,8,9 and are called digits
     The four common number types are:
@@ -12,14 +8,13 @@ Topics to Cover
         Decimal:        Base 10     -> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
         Hexadecimal :   Base 16     -> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
 
--- Importance of number systems in computing:
+ - Importance of number systems in computing:
     -Representing data: binary is used to represent transistor states
                         where as hexadecimal is used to represent those same binary numbers, but on a bigger scale
                         decimal is used for when we need to discern numbers visually and work with them
     -memory optimziation:   
                 some number systems simply require less data to representsome values as compared to other number systems
                 so theres an aspect of optmizaing your memory allocation if you used different number systems for different data
-
 
 2. Binary:         <Bi for two>
     Used to explain tasks to a computer, since theres only two states 0 and 1
@@ -82,6 +77,7 @@ Topics to Cover
                 ______________________________________
                            1000   100    001
                      1101 Binary == 1000100001 Octal
+
 4. Converting Between Number Systems:
     - All conversions will be in python file named conversions
 
@@ -111,6 +107,7 @@ Topics to Cover
                  +    45      =  45
                 [1][0101101]
                  -    45      = -45
+
     - Ones' Complement representation:
         Method 2: 
             Here the positive numbers are the same as Sign and Magnitude, and are called non-complemented values
@@ -132,6 +129,7 @@ Topics to Cover
                             01010010
                             ________
 overflow indicating +/- ->[1]00111110
+
     - Two's Complement:
      The two’s complement is another method to represent the negative binary number in a signed binary number system.
      Just like Sign-and-Magnitude and One’s Complement methods, the positive binary numbers remain unchanged. 
@@ -153,6 +151,7 @@ overflow indicating +/- ->[1]00111110
     - Arhithmetic operations with signed binary numbers:
         This was detailed in the three previous segments.
 
+
         TABLE OF 4 BIT SIGNED BINARY NUMBERS OF THE THREE METHODS:
             Decimal   Signed Mag    Signed Ones    Signed two’s
             +7        0111          0111           0111
@@ -172,20 +171,26 @@ overflow indicating +/- ->[1]00111110
             -6        1110          1001           1010
             -7        1111          1000           1001
 
+
 7. Binary Coded Decimal (BCD):
     - Definition and uses of BCD:
         The Binary Coded Decimal is a 4-bit binary number coded to represent specifically a decimal number.
         The “coded” refers to the process of assigning a specific or unique binary code to a particular decimal number.
         Example: 
-         Represent 356 in decimal in, binary and bcd:
-            356 DECIMAL 
+         Represent 356 in decimal in -> binary and bcd:
+                   356 DECIMAL 
+                        V
+
             1 2 4 8 16 32 64 128 256
             0 0 0 1  1  0  1  0   1  
-            000110101 BINARY
-             3    5    6
-            0011 0101 0110 BCD
 
-             [[ 356 Decimal // 000110101 Binary // 0011 0101 0110 BCD  ]]
+                 000110101 BINARY
+                        V
+
+                 3    5    6
+                0011 0101 0110 BCD
+
+             Answer : [[ 356 Decimal // 000110101 Binary // 0011 0101 0110 BCD  ]]
     
     - Convert Binary to Bcd
         Arthimetically it is done by first converting it to decimal, then writing each numbers binary representation 
